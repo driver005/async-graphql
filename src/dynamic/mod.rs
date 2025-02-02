@@ -52,7 +52,7 @@ mod type_ref;
 mod union;
 mod value_accessor;
 
-pub use directive::Directive;
+pub use directive::{Directive, to_meta_directive_invocation};
 pub use error::SchemaError;
 pub use field::{Field, FieldFuture, FieldValue, ResolverContext};
 pub use indexmap;

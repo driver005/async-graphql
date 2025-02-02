@@ -219,7 +219,7 @@ impl Interface {
         !self.keys.is_empty()
     }
 
-    pub(crate) fn register(&self, registry: &mut Registry) -> Result<(), SchemaError> {
+    pub fn register(&self, registry: &mut Registry) -> Result<(), SchemaError> {
         let mut fields = IndexMap::new();
 
         for field in self.fields.values() {

@@ -120,7 +120,7 @@ impl Union {
         &self.name
     }
 
-    pub(crate) fn register(&self, registry: &mut Registry) -> Result<(), SchemaError> {
+    pub fn register(&self, registry: &mut Registry) -> Result<(), SchemaError> {
         registry.types.insert(
             self.name.clone(),
             MetaType::Union {

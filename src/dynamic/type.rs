@@ -101,7 +101,7 @@ impl Type {
         }
     }
 
-    pub(crate) fn register(&self, registry: &mut Registry) -> Result<(), SchemaError> {
+    pub fn register(&self, registry: &mut Registry) -> Result<(), SchemaError> {
         if registry.types.contains_key(self.name()) {
             return Err(format!("Type \"{0}\" already exists", self.name()).into());
         }

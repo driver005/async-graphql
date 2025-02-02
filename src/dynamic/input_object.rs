@@ -107,7 +107,7 @@ impl InputObject {
         &self.name
     }
 
-    pub(crate) fn register(&self, registry: &mut Registry) -> Result<(), super::SchemaError> {
+    pub fn register(&self, registry: &mut Registry) -> Result<(), super::SchemaError> {
         let mut input_fields = IndexMap::new();
 
         for field in self.fields.values() {
