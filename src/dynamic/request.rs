@@ -2,8 +2,8 @@ use crate::{Request, dynamic::FieldValue};
 
 /// GraphQL request for dynamic schema.
 pub struct DynamicRequest {
-    pub(crate) inner: Request,
-    pub(crate) root_value: FieldValue<'static>,
+    pub inner: Request,
+    pub root_value: FieldValue<'static>,
 }
 
 /// A trait for [`DynamicRequest`]

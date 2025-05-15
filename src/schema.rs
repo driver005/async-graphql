@@ -828,8 +828,9 @@ fn remove_skipped_selection(selection_set: &mut SelectionSet, variables: &Variab
     }
 }
 
+#[doc(hidden)]
 #[allow(clippy::too_many_arguments)]
-pub(crate) async fn prepare_request(
+pub async fn prepare_request(
     mut extensions: Extensions,
     request: Request,
     session_data: Arc<Data>,
