@@ -806,7 +806,8 @@ pub struct Registry {
 }
 
 impl Registry {
-    pub(crate) fn add_system_types(&mut self) {
+    #[doc(hidden)]
+    pub fn add_system_types(&mut self) {
         self.add_directive(MetaDirective {
             name: "skip".into(),
             description: Some("Directs the executor to skip this field or fragment when the `if` argument is true.".to_string()),
@@ -1094,7 +1095,8 @@ impl Registry {
         }
     }
 
-    pub(crate) fn has_entities(&self) -> bool {
+    #[doc(hidden)]
+    pub fn has_entities(&self) -> bool {
         self.types.values().any(|ty| match ty {
             MetaType::Object {
                 keys: Some(keys),
@@ -1222,7 +1224,8 @@ impl Registry {
         }
     }
 
-    pub(crate) fn create_introspection_types(&mut self) {
+    #[doc(hidden)]
+    pub fn create_introspection_types(&mut self) {
         __Schema::create_type_info(self);
 
         if let Some(MetaType::Object { fields, .. }) = self.types.get_mut(&self.query_type) {
@@ -1292,7 +1295,8 @@ impl Registry {
         }
     }
 
-    pub(crate) fn create_federation_types(&mut self) {
+    #[doc(hidden)]
+    pub fn create_federation_types(&mut self) {
         <Any as InputType>::create_type_info(self);
 
         self.types.insert(
