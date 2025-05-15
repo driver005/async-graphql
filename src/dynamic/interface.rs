@@ -218,12 +218,6 @@ impl Interface {
         self
     }
 
-    /// Returns the type name
-    #[inline]
-    pub fn type_name(&self) -> &str {
-        &self.name
-    }
-
     #[inline]
     pub(crate) fn is_entity(&self) -> bool {
         !self.keys.is_empty()
