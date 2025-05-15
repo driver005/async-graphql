@@ -53,6 +53,8 @@ mod union;
 mod value_accessor;
 
 pub use directive::Directive;
+#[doc(hidden)]
+pub use directive::to_meta_directive_invocation;
 pub use r#enum::{Enum, EnumItem};
 pub use error::SchemaError;
 pub use field::{Field, FieldFuture, FieldValue, ResolverContext};

@@ -49,7 +49,14 @@ impl InputValue {
         }
     }
 
-    pub(crate) fn to_meta_input_value(&self) -> MetaInputValue {
+    /// Returns the type name
+    #[inline]
+    pub fn type_name(&self) -> &str {
+        &self.name
+    }
+
+    #[doc(hidden)]
+    pub fn to_meta_input_value(&self) -> MetaInputValue {
         MetaInputValue {
             name: self.name.clone(),
             description: self.description.clone(),

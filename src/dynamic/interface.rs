@@ -179,6 +179,12 @@ impl Interface {
     impl_set_tags!();
     impl_directive!();
 
+     /// Returns the type name
+    #[inline]
+    pub fn type_name(&self) -> &str {
+        &self.name
+    }
+
     /// Add a field to the interface type
     #[inline]
     pub fn field(mut self, field: InterfaceField) -> Self {
@@ -223,7 +229,8 @@ impl Interface {
         !self.keys.is_empty()
     }
 
-    pub(crate) fn register(&self, registry: &mut Registry) -> Result<(), SchemaError> {
+    #[doc(hidden)]
+    pub fn register(&self, registry: &mut Registry) -> Result<(), SchemaError> {
         let mut fields = IndexMap::new();
 
         for field in self.fields.values() {

@@ -75,6 +75,12 @@ impl SubscriptionField {
     impl_set_description!();
     impl_set_deprecation!();
 
+     /// Returns the type name
+    #[inline]
+    pub fn type_name(&self) -> &str {
+        &self.name
+    }
+
     /// Add an argument to the subscription field
     #[inline]
     pub fn argument(mut self, input_value: InputValue) -> Self {
@@ -134,7 +140,8 @@ impl Subscription {
         &self.name
     }
 
-    pub(crate) fn register(&self, registry: &mut Registry) -> Result<(), SchemaError> {
+    #[doc(hidden)]
+    pub fn register(&self, registry: &mut Registry) -> Result<(), SchemaError> {
         let mut fields = IndexMap::new();
 
         for field in self.fields.values() {

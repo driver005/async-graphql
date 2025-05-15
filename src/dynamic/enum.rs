@@ -101,7 +101,8 @@ impl Enum {
         &self.name
     }
 
-    pub(crate) fn register(&self, registry: &mut Registry) -> Result<(), SchemaError> {
+    #[doc(hidden)]
+    pub fn register(&self, registry: &mut Registry) -> Result<(), SchemaError> {
         let mut enum_values = IndexMap::new();
 
         for item in self.enum_values.values() {
