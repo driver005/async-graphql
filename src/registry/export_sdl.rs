@@ -127,7 +127,8 @@ impl SDLExportOptions {
 }
 
 impl Registry {
-    pub(crate) fn export_sdl(&self, options: SDLExportOptions) -> String {
+    #[doc(hidden)]
+    pub fn export_sdl(&self, options: SDLExportOptions) -> String {
         let mut sdl = String::new();
 
         for ty in self.types.values() {
