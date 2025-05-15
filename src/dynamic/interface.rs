@@ -219,7 +219,8 @@ impl Interface {
     }
 
     #[inline]
-    pub(crate) fn is_entity(&self) -> bool {
+    #[doc(hidden)]
+    pub fn is_entity(&self) -> bool {
         !self.keys.is_empty()
     }
 
